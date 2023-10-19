@@ -1,15 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Canvas } from '@react-three/fiber'
 import './App.css'
+import Experience from './components/Experience'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      
-    </>
+    <div className='App'>
+       <Canvas dpr={[1, 2]}>
+          <color attach="background" args={["#213547"]} />
+          <fog attach="fog" args={["#213547", 10, 20]} />
+          <Experience />
+        </Canvas>
+    </div>
   )
 }
 
