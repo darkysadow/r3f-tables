@@ -18,17 +18,6 @@ const tabletopMaterials = [
     }
 ];
 
-const legsColors = [
-    {
-        color: '#FFFFFF',
-        title: 'Білий',
-    },
-    {
-        color: "#000000",
-        title: "Чорний",
-    }
-];
-
 const tabletopGeometries = [
     {
         title: 'straight',
@@ -40,13 +29,54 @@ const tabletopGeometries = [
     },
 ]
 
+const legsTypes = [
+    {
+        title: 'Ishla',
+        ua: 'Ішла',
+    },
+    {
+        title: 'Lima',
+        ua: 'Ліма',
+    },
+    {
+        title: 'Trapezia',
+        ua: 'Трапеція',
+    },
+    {
+        title: 'Atlant',
+        ua: 'Атлант',
+    },
+    {
+        title: 'Linda',
+        ua: 'Лінда',
+    },
+    {
+        title: 'Skver',
+        ua: 'Сквер',
+    },
+]
+
+const legsColors = [
+    {
+        title: 'Black',
+        ua: 'Чорний',
+        color: '#000000'
+    },
+    {
+        title: 'White',
+        ua: 'Білий',
+        color: '#FFFFFF'
+    },
+]
+
 const CustomizationContext = createContext({});
 
 export const CustomizationProvider = (props) => {
     const [legs, setLegs] = useState(1);
     const [tabletopMaterial, setTabletopMaterial] = useState(tabletopMaterials[0]);
-    const [legsColor, setLegColor] = useState(legsColors[0]);
     const [tabletopGeometry, setTabletopGeometry] = useState(tabletopGeometries[0]);
+    const [legsType, setLegsType] = useState(legsTypes[0]);
+    const [legsColor, setLegsColor] = useState(legsColors[0]);
     return (
         <CustomizationContext.Provider
             value={{
@@ -57,10 +87,13 @@ export const CustomizationProvider = (props) => {
                 setTabletopMaterial,
                 legsColors,
                 legsColor,
-                setLegColor,
+                setLegsColor,
                 tabletopGeometries,
                 tabletopGeometry,
-                setTabletopGeometry
+                setTabletopGeometry,
+                legsTypes,
+                legsType,
+                setLegsType
             }}
         >
             {props.children}

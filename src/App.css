@@ -45,6 +45,7 @@
   align-items: center;
   justify-content: center;
   transition: all 0.4s;
+  font-size: 1em;
 }
 
 .item:hover {
@@ -55,9 +56,15 @@
 .item__dot {
   width: 32px;
   height: 32px;
+  padding: 2px;
   border-radius: 100%;
-  border: solid 2px #999999;
+  border: 2px solid white;
   margin: 0 0 10px 0;
+  transition: 0.3s all;
+}
+
+.item__dot:hover {
+  transform: scale(1.05);
 }
 
 .item.item--active .item__dot {
@@ -67,7 +74,7 @@
 .item__label {
   text-align: center;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 1em;
   color: #aaa;
   text-transform: capitalize;
 }

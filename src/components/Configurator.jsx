@@ -9,10 +9,14 @@ const Configurator = () => {
         setTabletopMaterial,
         legsColors,
         legsColor,
-        setLegColor,
+        setLegsColor,
         tabletopGeometries,
         tabletopGeometry,
-        setTabletopGeometry
+        setTabletopGeometry,
+        legsTypes,
+        legsType,
+        setLegsType
+
     } = useCustomization();
 
     return (
@@ -54,6 +58,36 @@ const Configurator = () => {
                             <div
                                 className="item__dot"
                              style={{ backgroundImage: `url(${item.imageLink})`}} 
+                            />
+                            <div className="item__label">{item.ua}</div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <div className="configurator__section">
+                <div className="configurator__section__title">Ніжки</div>
+                <div className="configurator__section__values">
+                    {legsTypes.map((item, index) => (
+                            <button 
+                                key={index}
+                                style={{border: `${item.title === legsType.title ? '1px solid white' : ''}`}}
+                                onClick={() => setLegsType(item)}>{item.ua}</button>
+                    ))}
+                </div>
+            </div>
+            <div className="configurator__section">
+                <div className="configurator__section__title">Колір ніжок</div>
+                <div className="configurator__section__values">
+                    {legsColors.map((item, index) => (
+                        <div
+                            key={index}
+                            className={`item ${item.title === legsColor.title ? "item--active" : ""
+                                }`}
+                            onClick={() => setLegsColor(item)}
+                        >
+                            <div
+                                className="item__dot"
+                             style={{ backgroundColor: `${item.color}`}} 
                             />
                             <div className="item__label">{item.ua}</div>
                         </div>
