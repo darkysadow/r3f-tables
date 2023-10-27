@@ -1,5 +1,6 @@
 import { MeshReflectorMaterial, PresentationControls, Stage } from "@react-three/drei";
 import TableTor from './TableTor'
+import TableConstructor from "./TableConstructor";
 
 const Experience = () => {
     return (
@@ -12,7 +13,8 @@ const Experience = () => {
       >
         <Stage environment="city" intensity={0.2} castShadow={false}>
             {/* Here must be a model */}
-            <TableTor />
+            {/* <TableTor /> */}
+            <TableConstructor />
         </Stage>
         <mesh rotation={[-Math.PI / 2, 0, 0]} position-y={-2}>
           <planeGeometry args={[170, 170]} />
