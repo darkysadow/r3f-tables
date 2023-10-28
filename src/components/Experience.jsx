@@ -1,5 +1,5 @@
 import { MeshReflectorMaterial, PresentationControls, Stage } from "@react-three/drei";
-import TableTor from './TableTor'
+
 import TableConstructor from "./TableConstructor";
 
 const Experience = () => {
